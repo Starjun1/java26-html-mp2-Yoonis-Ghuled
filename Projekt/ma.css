@@ -1,0 +1,243 @@
+:root {
+    --color-cream: #f7f1e6;
+    --color-dark: #29251f;
+    --color-red: #9c382c;
+    --color-green: #475a40;
+    --color-footer: #e9e0d1;
+    --space: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-cream);
+    color: var(--color-dark);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    align-items: center;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space);
+    justify-content: space-between;
+    padding: var(--space);
+}
+
+header h1 {
+    color: var(--color-red);
+    font-size: 1.5rem;
+}
+
+header .logo,
+header .header-banner {
+    height: 100px; /* Header image height */
+    width: 100px;  /* Header image width */
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+nav a {
+    border-radius: 4px;
+    color: var(--color-green);
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--color-red);
+    transform: translateY(-2px);
+}
+
+nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 2rem var(--space);
+}
+
+h2 {
+    color: var(--color-red);
+    margin-bottom: 0.5rem;
+}
+
+/* Home page */
+.home-page main {
+    max-width: none;
+    background:
+        linear-gradient(rgb(247 241 230 / 55%), rgb(247 241 230 / 55%)),
+        url("images/400px-AnimeDU_TrussardiFrontExt2.png") center / cover no-repeat;
+    min-height: 65vh;
+}
+
+.home-page main > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Menu page */
+.menu-grid {
+    display: grid;
+    gap: var(--space);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    margin-top: 1.5rem;
+}
+
+.dish {
+    background: white;
+    border: 1px solid #ddd5c8;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dish:hover {
+    box-shadow: 0 5px 14px rgb(0 0 0 / 15%);
+    transform: translateY(-3px);
+}
+
+.dish img {
+    display: block;
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.dish div {
+    padding: var(--space);
+}
+
+.dish h3 {
+    color: var(--color-green);
+    margin-bottom: 0.4rem;
+}
+
+.dish strong {
+    color: var(--color-red);
+}
+
+/* Reservation page: the image and section must both be inside .booking-layout. */
+.booking-layout {
+    align-items: start;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 550px) 160px;
+    justify-content: start;
+}
+
+.booking-layout > section {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.booking-layout > .booking-image {
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
+    width: 470px; /* Reservation image width; height scales proportionally */
+    margin-left: 0;
+}
+
+.booking-form {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    max-width: 550px;
+}
+
+.booking-form input,
+.booking-form textarea {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font: inherit;
+    padding: 0.7rem;
+    width: 100%;
+}
+
+.booking-form button {
+    background: var(--color-red);
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    justify-self: start;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.booking-form button:hover {
+    background: var(--color-green);
+    transform: translateY(-2px);
+}
+
+/* Shared footer */
+footer {
+    background: var(--color-footer);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1.5rem var(--space);
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-green);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    header .logo,
+    header .header-banner {
+        height: 100px;
+        width: 100px;
+    }
+
+    nav ul {
+        gap: 0.2rem;
+    }
+
+    main {
+        padding: 1.5rem var(--space);
+    }
+
+    .booking-layout {
+        gap: 0.75rem;
+        grid-template-columns: minmax(0, 1fr) 100px;
+    }
+
+    .booking-layout > .booking-image {
+        height: auto;
+        width: 120px;
+    }
+}

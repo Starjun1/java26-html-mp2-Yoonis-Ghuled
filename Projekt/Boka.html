@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a table at Trattoria Trussardi in Morioh.">
+    <meta name="keywords" content="Trattoria Trussardi, Italian restaurant, reservation, Morioh">
+    <title>Reservation | Trattoria Trussardi</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="ma.css">
+</head>
+<body>
+    <header>
+        <a href="Start.html" class="home-link">
+            <h1>Trattoria Trussardi!</h1>
+        </a>
+
+        <a href="Start.html" class="home-link" aria-label="Return to the home page">
+            <img class="header-banner"                          
+                 src="C:\Users\yoonis.ghuled\Documents\HTML\Övninguppgift\Projekt\400px-Tonio_Trussardi_Infobox_Anime.png"
+                 alt="Chef Tonio Trussardi">
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="Start.html">Start</a></li>
+                <li><a href="Meny.html">Menu</a></li>
+                <li><a aria-current="page" href="Boka.html">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="booking-page">
+        <!-- The form section and image are siblings for the reservation grid layout. -->
+        <div class="booking-layout">
+            <section aria-labelledby="booking-title">
+                <h2 id="booking-title">Book a Table</h2>
+                <p>Fill out the form to request a reservation.</p>
+
+                <form class="booking-form">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
+
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div>
+                        <label for="time">Time:</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div>
+                        <label for="requests">Other requests:</label>
+                        <textarea id="requests" name="requests" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit">Book Now</button>
+                </form>
+            </section>
+
+            <img class="booking-image"
+                 src="C:\Users\yoonis.ghuled\Documents\HTML\Övninguppgift\Projekt\400px-Tonio_Trussardi_Infobox_Manga.png"
+                 alt="Chef Tonio Trussardi">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <address>Morioh 15, 123 45 Japan</address>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+        <p><a href="mailto:info@trattoria-trussardi.se">info@trattoria-trussardi.se</a></p>
+        <p>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> ·
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </p>
+        <p>&copy; 2026 Trattoria Trussardi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
